@@ -1,15 +1,13 @@
-export function taskFirst () {
-  const task = 'I prefer const when I can.';
-  return task;
-}
+export default function taskBlock (trueOrFalse) {
+  const task = false;
+  const task2 = true;
 
-export function getLast () {
-  return ' is okay';
-}
+  if (trueOrFalse) {
+    // eslint-disable-next-line no-unused-vars, no-shadow
+    const task = true;
+    // eslint-disable-next-line no-unused-vars, no-shadow
+    const task2 = false;
+  }
 
-export function taskNext () {
-  let combination = 'But sometimes let';
-  combination += getLast();
-
-  return combination;
+  return [task, task2];
 }

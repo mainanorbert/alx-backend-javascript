@@ -16,17 +16,42 @@ function printTeacher(firstName: string, lastName: string): string {
   }
 
 interface printTeacherFunction {
-  
+    (firstName: string, lastName: string): string; 
 }
 
+interface StudentClassInterface {
+  new (firstName: string, lastName: string): StudentClass;
+}
+
+interface StudentClass {
+  workOnHomework(): string;
+  displayName(): string;
+}
+
+class StudentClass implements StudentClass {
+  private firstName: string;
+  private lastName: string;
+
+  constructor(firstName: string, lastName: string) {
+    this.firstName = firstName;
+    this.lastName = lastName 
+  }
+
+  workOnHomework(): string {
+    return "Currently working";
+  }
+  displayName(): string {
+    return this.firstName;
+  }
+}
   
-  const teacher3: Teacher = {
-    firstName: 'John',
-    fullTimeEmployee: false,
-    lastName: 'Doe',
-    location: 'London',
-    contract: false,
-  };
+//   const teacher3: Teacher = {
+//     firstName: 'John',
+//     fullTimeEmployee: false,
+//     lastName: 'Doe',
+//     location: 'London',
+//     contract: false,
+//   };
   
-  console.log(teacher3);
+//   console.log(teacher3);
   

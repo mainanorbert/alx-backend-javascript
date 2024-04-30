@@ -8,7 +8,7 @@ const countStudents = (path) => {
       return { firstname, lastname, age: parseInt(age), field };
     });
     const len = records.length;
-    console.log(`Number of Students: ${len}`);
+    console.log(`Number of students: ${len}`);
 
     const studentByField = records.reduce((acc, curr) => {
       if (!acc[curr.field]) {

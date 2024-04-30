@@ -7,7 +7,7 @@ const countStudents = (path) => {
     const records = lines.slice(1).filter((line) => line.trim() !== '').map((line) => {
       const [firstname, lastname, age, field] = line.split(',');
       return {
-        firstname, lastname, age: parseInt('10', age), field
+        firstname, lastname, age: parseInt('10', age), field,
       };
     });
     const len = records.length;

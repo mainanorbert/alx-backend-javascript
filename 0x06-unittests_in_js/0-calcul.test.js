@@ -15,4 +15,11 @@ describe('add', () => {
 	  assert.equal(calculateNumber(-1, 1), 0)
 	  assert.equal(calculateNumber(-1.5, 2), 1)
   })
+  it("testing zeros", () => {
+	  assert.equal(calculateNumber(0, 0), 0)
+  })
+  it("testing large numbers", () => {
+	  assert.equal(calculateNumber(10000, 20000), 30000)
+	  assert.equal(calculateNumber(1.4538329, 9.3243842), 10)
+  })
 });

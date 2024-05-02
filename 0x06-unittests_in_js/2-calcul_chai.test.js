@@ -22,7 +22,7 @@ describe('calculateNumber', () => {
     });
     
     it('should return the sum of two large numbers', () => {
-      expect(calculateNumber('SUM', 10000, 20000)).to.equal(3000)
+      expect(calculateNumber('SUM', 10000, 20000)).to.equal(30000)
       expect(calculateNumber('SUM', 1.4538329, 9.3243842)).to.equal(10);
     })
   });

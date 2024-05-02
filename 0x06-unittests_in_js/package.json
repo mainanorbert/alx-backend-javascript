@@ -1,18 +1,14 @@
 {
-  "name": "task_0",
-  "version": "1.0.0",
-  "description": "",
   "main": "index.js",
-  "type": "module",
+  "devDependencies": {
+    "assert": "^2.1.0",
+    "chai": "^5.1.0",
+    "mocha": "^10.4.0"
+  },
   "scripts": {
     "test": "mocha"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "devDependencies": {
-    "chai": "^4.4.1",
-    "mocha": "^10.3.0",
-    "sinon": "^17.0.1"
+  "dependencies": {
+    "node-fetch": "^2.6.1"
   }
 }

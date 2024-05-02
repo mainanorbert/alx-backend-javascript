@@ -1,4 +1,4 @@
-const calculateNumber = (a, b, type) => {
+const calculateNumber = (type, a, b) => {
   const roundA = Math.round(a);
   const roundB = Math.round(b);
 
@@ -6,16 +6,15 @@ const calculateNumber = (a, b, type) => {
     case 'ADD':
       return roundA + roundB;
     case 'SUBTRACT':
-      return roundA - roundB
+      return roundA - roundB;
     case 'DIVIDE':
-      if (roundB === 0){
-        return 'Error'
+      if (roundB === 0) {
+        return 'Error';
       }
-      return roundA/roundB  
+      return roundA / roundB;
     default:
-      throw new Error('Invalid type. Type must be SUM, SUBTRACT, or DIVIDE.');
+      throw new Error('Invalid type. Type must be ADD, SUBTRACT, or DIVIDE.');
   }
-
-}
+};
 
 module.exports = calculateNumber;

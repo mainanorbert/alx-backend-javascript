@@ -1,9 +1,18 @@
 {
-  "devDependencies": {
-    "assert": "^2.1.0",
-    "mocha": "^10.4.0"
-  },
+  "name": "task_0",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "type": "module",
   "scripts": {
-	  "test": "mocha"
+    "test": "mocha"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^4.4.1",
+    "mocha": "^10.3.0",
+    "sinon": "^17.0.1"
   }
 }

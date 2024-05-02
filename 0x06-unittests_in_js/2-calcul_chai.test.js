@@ -11,8 +11,8 @@ describe('calculateNumber', () => {
             expect(calculateNumber('SUM', 1.543, 4.5)).to.equal(7);
         });
 
-        it('should return the sum of zero and positive number', () => {
-            expect(calculateNumber('SUM', 0, 4.5)).to.equal(5);
+        it('return the sum of zero and positive number', () => {
+            expect(calculateNumber('SUM', 0, 4.6)).to.equal(5);
         });
 
         it('should return the sum of zero and negative number', () => {

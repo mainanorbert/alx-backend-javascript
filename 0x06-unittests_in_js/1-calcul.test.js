@@ -4,27 +4,27 @@ const calculateNumber = require('./1-calcul');
 describe('calculateNumber', () => {
   describe('ADD', () => {
     it('should return the sum of two rounded numbers', () => {
-      assert.equal(calculateNumber('ADD', 1.4, 1.5), 3);
-      assert.equal(calculateNumber('ADD', 1, 1), 2);
+      assert.equal(calculateNumber('SUM', 1.4, 1.5), 3);
+      assert.equal(calculateNumber('SUM', 1, 1), 2);
     });
 
     it('should return the sum of two rounded negative numbers', () => {
-      assert.equal(calculateNumber('ADD', -1, -1), -2);
-      assert.equal(calculateNumber('ADD', -1.4, -1.5), -2);
+      assert.equal(calculateNumber('SUM', -1, -1), -2);
+      assert.equal(calculateNumber('SUM', -1.4, -1.5), -2);
     });
 
     it('should return the sum of a negative and a positive number', () => {
-      assert.equal(calculateNumber('ADD', -1, 1), 0);
-      assert.equal(calculateNumber('ADD', -1.5, 2), 1);
+      assert.equal(calculateNumber('SUM', -1, 1), 0);
+      assert.equal(calculateNumber('SUM', -1.5, 2), 1);
     });
 
     it('should return the sum of two zeros', () => {
-      assert.equal(calculateNumber('ADD', 0, 0), 0);
+      assert.equal(calculateNumber('SUM', 0, 0), 0);
     });
 
     it('should return the sum of two large numbers', () => {
-      assert.equal(calculateNumber('ADD', 10000, 20000), 30000);
-      assert.equal(calculateNumber('ADD', 1.4538329, 9.3243842), 10);
+      assert.equal(calculateNumber('SUM', 10000, 20000), 30000);
+      assert.equal(calculateNumber('SUM', 1.4538329, 9.3243842), 10);
     });
   });
 
@@ -93,7 +93,7 @@ describe('INVALID', () => {
 
 describe('Edge cases', () => {
   it('should return 0 when adding two very small numbers', () => {
-    assert.equal(calculateNumber('ADD', Number.EPSILON, Number.EPSILON), 0);
+    assert.equal(calculateNumber('SUM', Number.EPSILON, Number.EPSILON), 0);
   });
 
   it('should return Infinity when dividing by a very small number', () => {
@@ -101,7 +101,7 @@ describe('Edge cases', () => {
   });
 
   it('should handle large numbers for all operations', () => {
-    assert.equal(calculateNumber('ADD', Number.MAX_VALUE, Number.MAX_VALUE), Infinity);
+    assert.equal(calculateNumber('SUM', Number.MAX_VALUE, Number.MAX_VALUE), Infinity);
     assert.equal(calculateNumber('SUBTRACT', Number.MAX_VALUE, Number.MAX_VALUE), 0);
     assert.equal(calculateNumber('DIVIDE', Number.MAX_VALUE, Number.MAX_VALUE), 1);
   });

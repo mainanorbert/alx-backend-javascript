@@ -23,3 +23,36 @@ describe('add', () => {
 	  assert.equal(calculateNumber(1.4538329, 9.3243842, 'ADD'), 10)
   })
 });
+
+describe('sub', () => {
+  it('subtration of numbers', () => {
+    assert.equal(calculateNumber(2, 1, 'SUBTRACT'), 1)
+    assert.equal(calculateNumber(1.5, 1, 'SUBTRACT'), 1)
+  })
+  it('sub negatives', () => {
+    assert.equal(calculateNumber(-1, -1, 'SUBTRACT'), 0)
+    assert.equal(calculateNumber(-1.1, -1.4, 'SUBTRACT'), 0)
+  })
+})
+
+describe('div', () => {
+  it('subtration of numbers', () => {
+    assert.equal(calculateNumber(2, 1, 'DIVIDE'), 2)
+    assert.equal(calculateNumber(1.5, 1.5, 'DIVIDE'), 1)
+  })
+  it('sub negatives', () => {
+    assert.equal(calculateNumber(-1, -1, 'DIVIDE'), 1)
+    assert.equal(calculateNumber(-4, -1.5, 'DIVIDE'), 4)
+  })
+})
+
+describe('mul', () => {
+  it('subtration of numbers', () => {
+    assert.equal(calculateNumber(2, 1, 'DIVIDE'), 2)
+    assert.equal(calculateNumber(1.5, 1.5, 'DIVIDE'), 1)
+  })
+  it('sub negatives', () => {
+    assert.equal(calculateNumber(-1, -1, 'DIVIDE'), 1)
+    assert.equal(calculateNumber(-3, -1.5, 'DIVIDE'), 3)
+  })
+})

@@ -55,8 +55,8 @@ describe('calculateNumber', () => {
             expect(calculateNumber('DIVIDE', 0, 4.5)).to.equal(0);
         });
 
-        it('should return the division result of zero and negative number when divisor is not zero', () => {
-            expect(calculateNumber('DIVIDE', 0, -4.5)).to.equal(-0);
+        it('returns the division result of zero and negative number when divisor is not zero', () => {
+            expect(calculateNumber('DIVIDE', 0, -6.5)).to.equal(-0);
         });
     });
 });

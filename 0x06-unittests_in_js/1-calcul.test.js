@@ -45,6 +45,7 @@ describe('calculateNumber', () => {
 
     it('should return the difference of two large numbers', () => {
       assert.equal(calculateNumber('SUBTRACT', 9.323232, 3.432492432), 6);
+      assert.equal(calculateNumber('SUBTRACT', -9.323232, -3.432492432), -6);
       assert.equal(calculateNumber('SUBTRACT', 1000000, 100000), 900000);
     });
   });
@@ -53,16 +54,20 @@ describe('calculateNumber', () => {
     it('should return the division of two numbers', () => {
       assert.equal(calculateNumber('DIVIDE', 2, 1), 2);
       assert.equal(calculateNumber('DIVIDE', 1.5, 1.5), 1);
+      assert.equal(calculateNumber('DIVIDE', -4, -1.5), 4);
+      assert.equal(calculateNumber('DIVIDE', 1.6, 1.2), 2);
     });
 
     it('should return the division of two negative numbers', () => {
       assert.equal(calculateNumber('DIVIDE', -1, -1), 1);
       assert.equal(calculateNumber('DIVIDE', -4, -1.5), 4);
+      assert.equal(calculateNumber('DIVIDE', -2.3, -1.5), 2);
     });
 
     it('should return the division of a negative and a positive number', () => {
       assert.equal(calculateNumber('DIVIDE', -1, 1), -1);
       assert.equal(calculateNumber('DIVIDE', -4, 1.5), -2);
+      assert.equal(calculateNumber('DIVIDE', 4.3, 1.5), 2);
     });
 
     it('should return 0 when dividing by 0', () => {
@@ -75,15 +80,16 @@ describe('calculateNumber', () => {
     it('should return the division of two large numbers', () => {
       assert.equal(calculateNumber('DIVIDE', 100000, 5000), 20);
       assert.equal(calculateNumber('DIVIDE', 3.64392432, 1.543242445), 2);
+      assert.equal(calculateNumber('DIVIDE', -3.64392432, -1.543242445), 2);
     });
   });
 });
 
-describe('INVALID', ()=>{
-  it('throwing error for invalid type', () =>{
-    assert.throws(() =>{calculateNumber('INVALID', 1, 3);}, Error);
-  })
-})
+describe('INVALID', () => {
+  it('throwing error for invalid type', () => {
+    assert.throws(() => { calculateNumber('INVALID', 1, 3); }, Error);
+  });
+});
 
 describe('Edge cases', () => {
   it('should return 0 when adding two very small numbers', () => {
@@ -99,11 +105,4 @@ describe('Edge cases', () => {
     assert.equal(calculateNumber('SUBTRACT', Number.MAX_VALUE, Number.MAX_VALUE), 0);
     assert.equal(calculateNumber('DIVIDE', Number.MAX_VALUE, Number.MAX_VALUE), 1);
   });
-
-  it('should return 0 when dividing 0 by any number', () => {
-    // assert.equal(calculateNumber('DIVIDE', 0, Number.MAX_VALUE), Error);
-    // assert.equal(calculateNumber('DIVIDE', 0, Number.MIN_VALUE), Error);
-  });
 });
-
-

@@ -3,8 +3,8 @@ const calculateNumber = require('./2-calcul_chai.js');
 
 describe('calculateNumber', () => {
     describe('SUM operation', () => {
-        it('should return the sum of rounded numbers, up & down', () => {
-            expect(calculateNumber('SUM', 1.4, 4.5)).to.equal(6);
+        it('returns the sum of rounded numbers, up & down', () => {
+            expect(calculateNumber('SUM', 2.4, 1.5)).to.equal(4);
         });
 
         it('should return the sum of rounded numbers, both up', () => {

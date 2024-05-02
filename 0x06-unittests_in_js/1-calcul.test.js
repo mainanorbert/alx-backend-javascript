@@ -105,3 +105,5 @@ describe('Edge cases', () => {
     // assert.equal(calculateNumber('DIVIDE', 0, Number.MIN_VALUE), Error);
   });
 });
+
+

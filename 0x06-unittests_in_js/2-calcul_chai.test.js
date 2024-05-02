@@ -4,7 +4,7 @@ const calculateNumber = require('./2-calcul_chai.js');
 describe('calculateNumber', () => {
     describe('SUM', () => {
         it('return the sum of rounded numbers, up & down', () => {
-            expect(calculateNumber('SUM', 1.36, 4.5)).to.equal(6);
+            expect(calculateNumber('SUM', 1.46, 4.5)).to.equal(6);
         });
 
         it('sum of rounded numbers, both up', () => {
@@ -30,17 +30,17 @@ describe('calculateNumber', () => {
         });
 
         it('should return the subtraction result of zero and positive number', () => {
-            expect(calculateNumber('SUBTRACT', 0, 4.7)).to.equal(-5);
+            expect(calculateNumber('SUBTRACT', 0, 4.5)).to.equal(-5);
         });
 
         it('should return the subtraction result of zero and negative number', () => {
-            expect(calculateNumber('SUBTRACT', 0, -4.6)).to.equal(4);
+            expect(calculateNumber('SUBTRACT', 0, -4.5)).to.equal(4);
         });
     });
 
     describe('DIVIDE operation', () => {
-        it('Return the division result of rounded numbers when divisor is not zero', () => {
-            expect(calculateNumber('DIVIDE', 1.2, 4.6)).to.equal(0.2);
+        it('should return the division result of rounded numbers when divisor is not zero', () => {
+            expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
         });
 
         it('Returns "Error" when divisor is zero', () => {

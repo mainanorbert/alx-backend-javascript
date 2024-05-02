@@ -1,5 +1,6 @@
+const calculateNumber = require('./2-calcul_chai');
 const { expect } = require('chai');
-const calculateNumber = require('./2-calcul_chai.js');
+
 
 describe('calculateNumber', () => {
     describe('SUM operation', () => {
@@ -43,8 +44,8 @@ describe('calculateNumber', () => {
             expect(calculateNumber('DIVIDE', 1.4, 4.5)).to.equal(0.2);
         });
 
-        it('should return "Error" when divisor is zero', () => {
-            expect(calculateNumber('DIVIDE', 1.4, 0)).to.equal('Error');
+        it('returns "Error" when divisor is zero', () => {
+            expect(calculateNumber('DIVIDE', 1.3, 0)).to.equal('Error');
         });
 
         it('should return the division result of negative numbers when divisor is not zero', () => {

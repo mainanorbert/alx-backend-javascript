@@ -1,7 +1,7 @@
 const { expect } = require('chai');
 
 // import { expect } from 'chai';
-const calculateNumber = require('./1-calcul');
+const calculateNumber = require('./2-calcul');
 
 describe('calculateNumber', () => {
   describe('ADD', () => {

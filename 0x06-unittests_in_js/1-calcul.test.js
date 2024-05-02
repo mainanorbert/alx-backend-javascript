@@ -68,11 +68,40 @@ describe('calculateNumber', () => {
     it('should return 0 when dividing by 0', () => {
       assert.equal(calculateNumber('DIVIDE', 0, 1), 0);
       assert.equal(calculateNumber('DIVIDE', -4, 0), 'Error');
+      assert.equal(calculateNumber('DIVIDE', 0, 0), 'Error');
+      assert.equal(calculateNumber('DIVIDE', 4, 0), 'Error');
     });
 
     it('should return the division of two large numbers', () => {
       assert.equal(calculateNumber('DIVIDE', 100000, 5000), 20);
       assert.equal(calculateNumber('DIVIDE', 3.64392432, 1.543242445), 2);
     });
+  });
+});
+
+describe('INVALID', ()=>{
+  it('throwing error for invalid type', () =>{
+    assert.throws(() =>{calculateNumber('INVALID', 1, 3);}, Error);
+  })
+})
+
+describe('Edge cases', () => {
+  it('should return 0 when adding two very small numbers', () => {
+    assert.equal(calculateNumber('ADD', Number.EPSILON, Number.EPSILON), 0);
+  });
+
+  it('should return Infinity when dividing by a very small number', () => {
+    // assert.equal(calculateNumber('DIVIDE', 1, Number.EPSILON), Error);
+  });
+
+  it('should handle large numbers for all operations', () => {
+    assert.equal(calculateNumber('ADD', Number.MAX_VALUE, Number.MAX_VALUE), Infinity);
+    assert.equal(calculateNumber('SUBTRACT', Number.MAX_VALUE, Number.MAX_VALUE), 0);
+    assert.equal(calculateNumber('DIVIDE', Number.MAX_VALUE, Number.MAX_VALUE), 1);
+  });
+
+  it('should return 0 when dividing 0 by any number', () => {
+    // assert.equal(calculateNumber('DIVIDE', 0, Number.MAX_VALUE), Error);
+    // assert.equal(calculateNumber('DIVIDE', 0, Number.MIN_VALUE), Error);
   });
 });

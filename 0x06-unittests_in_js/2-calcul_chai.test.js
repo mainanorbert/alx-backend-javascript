@@ -7,8 +7,8 @@ describe('calculateNumber', () => {
             expect(calculateNumber('SUM', 2.4, 1.5)).to.equal(4);
         });
 
-        it('should return the sum of rounded numbers, both up', () => {
-            expect(calculateNumber('SUM', 1.54, 4.5)).to.equal(7);
+        it('return the sum of rounded numbers, both up', () => {
+            expect(calculateNumber('SUM', 1.543, 4.5)).to.equal(7);
         });
 
         it('should return the sum of zero and positive number', () => {

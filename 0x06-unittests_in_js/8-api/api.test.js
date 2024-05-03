@@ -1,27 +1,36 @@
-const { expect } = require('chai');
 const request = require('request');
+const { expect } = require('chai');
 
-describe('Index page', () => {
-  let server;
-
-  before(() => {
-    server = require('./api');
-  });
-
-  after(() => {
-    server.close();
-  });
-
-  it('should return status 200', (done) => {
-    request.get('http://localhost:7865/', (error, response, body) => {
-      expect(response.statusCode).to.equal(200);
+describe('Index page suite', () => {
+  it('Correct GET/ Response', (done) => {
+    request.get('http://localhost:7865', (error, response, body) => {
+      if (error) return done(error);
+      expect(response.statusCode).to.be.equal(200);
+      expect(body).to.be.equal('Welcome to the payment system');
       done();
     });
   });
 
-  it('should return "Welcome to the payment system"', (done) => {
-    request.get('http://localhost:7865/', (error, response, body) => {
-      expect(body).to.equal('Welcome to the payment system');
+  it('Correct result?', (done) => {
+    request.get('http://localhost:7865', (error, response, body) => {
+      if (error) return done(error);
+      expect(body).to.be.equal('Welcome to the payment system');
+      done();
+    });
+  });
+  
+  it('Correct response for invalid route?', (done) => {
+    request.get('http://localhost:7865/invalid', (error, response, body) => {
+      if (error) return done(error);
+      expect(response.statusCode).to.be.equal(404);
+      done();
+    });
+  });
+
+  it('Server should return 404 for invalid route', (done) => {
+    request.get('http://localhost:7865/invalid', (error, response) => {
+      if (error) return done(error);
+      expect(response.statusCode).to.be.equal(404);
       done();
     });
   });

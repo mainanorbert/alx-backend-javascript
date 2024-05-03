@@ -11,7 +11,7 @@ describe('Index page suite', () => {
     });
   });
 
-  it('Correct result?', (done) => {
+  it('result for available route?', (done) => {
     request.get('http://localhost:7865', (error, response, body) => {
       if (error) return done(error);
       expect(body).to.be.equal('Welcome to the payment system');
@@ -19,16 +19,16 @@ describe('Index page suite', () => {
     });
   });
   
-  it('Correct response for invalid route?', (done) => {
-    request.get('http://localhost:7865/invalid', (error, response, body) => {
+  it('Response for invalid route?', (done) => {
+    request.get('http://localhost:7865/home', (error, response, body) => {
       if (error) return done(error);
       expect(response.statusCode).to.be.equal(404);
       done();
     });
   });
 
-  it('Server should return 404 for invalid route', (done) => {
-    request.get('http://localhost:7865/invalid', (error, response) => {
+  it('Return 404 for invalid route', (done) => {
+    request.get('http://localhost:7865/notfound', (error, response) => {
       if (error) return done(error);
       expect(response.statusCode).to.be.equal(404);
       done();

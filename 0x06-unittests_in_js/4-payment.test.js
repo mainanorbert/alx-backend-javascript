@@ -24,6 +24,6 @@ describe('sendPaymentRequestToApi', () => {
         sendPaymentRequestToApi(totalAmount, totalShipping);
 
         assert(stubSum.calledOnceWithExactly('SUM', totalAmount, totalShipping));
-        assert(consoleLogSpy.calledOnceWithExactly('The total is 10'));
+        assert(consoleLogSpy.calledOnceWithExactly('The total is: 10'));
     });
 });

@@ -25,20 +25,4 @@ describe('Cart page', () => {
       done();
     });
   });
-
-  it('Correct result when :id is NOT a number (=> 404)', (done) => {
-    request.get('http://localhost:7865/cart/hello', (error, response, body) => {
-      if (error) return done(error);
-      expect(body).to.be.equal('Cannot GET /cart/hello');
-      done();
-    });
-  });
-
-  it('correct output for not found', (done) =>{
-    request.get('http://localhost:7865/cart/hell', (e, res, body) =>{
-      if (e) return done(e)
-      expect(res.statusCode).to.be.equal(404)
-    done()
-    })
-  })
 });

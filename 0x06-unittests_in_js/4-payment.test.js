@@ -8,8 +8,8 @@ describe('sendPaymentRequestToApi', () => {
     let consoleLogSpy;
 
     beforeEach(() => {
-        stubSum = sinon.stubspy(Utils, 'calculateNumber').returns(10);
-        consoleLogSpy = sinon.spy(console.log)
+        stubSum = sinon.stub(Utils, 'calculateNumber').returns(10);
+        consoleLogSpy = sinon.spy(console, 'log')
     });
 
     afterEach(() => {

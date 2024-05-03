@@ -1,9 +1,9 @@
 const Utils = {
-  calculateNumber (a, b, type) {
+  calculateNumber (type, a, b) {
     const roundA = Math.round(a);
     const roundB = Math.round(b);
 
-    switch (type) {
+    switch (type.toUpperCase()) {
       case 'SUM':
         return roundA + roundB;
       case 'SUBTRACT':

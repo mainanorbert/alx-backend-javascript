@@ -4,22 +4,22 @@ const sendPaymentRequestToApi = require('./3-payment');
 const Utils = require('./utils');
 
 describe('sendPaymentRequestToApi', () => {
-    let calculateNumberSpy;
+    let spySum;
 
     beforeEach(() => {
-        calculateNumberSpy = sinon.spy(Utils, 'calculateNumber');
+        spySum = sinon.spy(Utils, 'calculateNumber');
     });
 
     afterEach(() => {
-        calculateNumberSpy.restore();
+        spySum.restore();
     });
 
-    it('should call Utils.calculateNumber with correct arguments and log the result', () => {
+    it('Calling Utils.calculateNumber and logging the result', () => {
         const totalAmount = 100;
         const totalShipping = 20;
 
         sendPaymentRequestToApi(totalAmount, totalShipping);
 
-        assert(calculateNumberSpy.calledOnceWithExactly('SUM', totalAmount, totalShipping));
+        assert(spySum.calledOnceWithExactly('SUM', totalAmount, totalShipping));
     });
 });
